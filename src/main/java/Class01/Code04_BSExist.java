@@ -14,7 +14,8 @@ public class Code04_BSExist {
         int R = sortedArr.length - 1;
         int mid = 0;
         while(L < R){
-            mid = (L + (R - L)) / 2;
+            mid = L + ((R - L) / 2); //very important, avoid to overflow
+            //mid = L + ((R - L) >> 1);
             if(sortedArr[mid] == num){
                 return true;
             }else if(sortedArr[mid] > num){
