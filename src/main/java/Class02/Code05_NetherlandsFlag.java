@@ -5,7 +5,7 @@ public class Code05_NetherlandsFlag {
         int smaller = -1;
         int bigger = arr.length;
         for(int i = 0; i < bigger;){
-            if(arr[i] <= num){
+            if(arr[i] < num){
                 swap(arr, i++, ++smaller);
             }else if(arr[i] == num){
                 i++;
