@@ -2,8 +2,8 @@ package Class02;
 
 /*
     Heap Sort:
-    Time Complexity:
-    Space Complexity:
+    Time Complexity: O(N*LogN)
+    Space Complexity: O(1)
     Heap add / delete, time complexity O(logN)
  */
 
@@ -12,8 +12,12 @@ public class Code03_HeapSort {
         if(arr == null || arr.length < 2){
             return;
         }
-        for(int i = 0; i < arr.length; i++){
-            heapInsert(arr, i);
+//        for(int i = 0; i < arr.length; i++){
+//            heapInsert(arr, i);
+//        }
+        //Improve O(N)
+        for(int i = arr.length - 1; i >= 0; i--){
+            heapify(arr, i, arr.length);
         }
         int heapSize = arr.length;
         while(heapSize > 1) {
